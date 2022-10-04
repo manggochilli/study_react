@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import CommentList from "../list/CommentList";
@@ -50,13 +50,13 @@ const CommentLabel = styled.p`
 
 function PostViewPage(props) {
 	const navigate = useNavigate();
-	const { postID } = useParams();
+	const { postId } = useParams();
 
 	const post = data.find((item) => {
 		return item.id == postId;
 	});
 
-	const [comment, setComment] = useState('');
+	const [comment, setComment] = useState("");
 
 	return (
 		<Wrapper>
@@ -90,7 +90,7 @@ function PostViewPage(props) {
 				/>
 			</Container>
 		</Wrapper>
-	)
+	);
 }
 
 export default PostViewPage;

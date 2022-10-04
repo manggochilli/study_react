@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 	border-radius: 8px;
 	cursor: pointer;
 	background: white;
-	:over {
+	:hover {
 		background: lightgrey;
 	}
 `;
@@ -20,14 +20,14 @@ const Wrapper = styled.div`
 const TitleText = styled.p`
 	font-size: 20px;
 	font-weight: 500;
-`
+`;
 
 function PostListItem(props) {
 	const { post, onClick } = props;
 
 	return (
 		<Wrapper onClick={onClick}>
-			<TitleText>{props.title}</TitleText>
+			<TitleText>{post.title}</TitleText>
 		</Wrapper>
 	)
 }
